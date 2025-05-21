@@ -4,15 +4,19 @@ using System.Collections;
 
 public class Mainmenu : MonoBehaviour
 {
-    
-    public void ButtonGoArtikel ()
+
+    public void ButtonGoArtikel()
     {
         SceneManager.LoadScene("Artikel");
     }
 
-   
     public void ButtonGoWisata()
     {
-        SceneManager.LoadScene("Astrowisata"); 
+        SceneManager.LoadScene("Mainmenuwisata");
+    }
+
+    public void ButtonQuit()
+    {
+        Application.Quit();
     }
 }

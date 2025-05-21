@@ -277,7 +277,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 237673304}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 911266352}
+        m_TargetAssemblyTypeName: Menuartikel, Assembly-CSharp
+        m_MethodName: Buttonbacktomenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &237673304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +431,7 @@ GameObject:
   - component: {fileID: 911266350}
   - component: {fileID: 911266349}
   - component: {fileID: 911266348}
+  - component: {fileID: 911266352}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -510,6 +523,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &911266352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911266347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7863577add2936b42b9f7948ca34912e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1121849262
 GameObject:
   m_ObjectHideFlags: 0
