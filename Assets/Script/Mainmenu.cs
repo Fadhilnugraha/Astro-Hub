@@ -1,16 +1,18 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 public class Mainmenu : MonoBehaviour
 {
     
-    Public void ButtonGoArtikel ()
+    public void ButtonGoArtikel ()
     {
         SceneManager.LoadScene("Artikel");
     }
 
    
-    void Update()
+    public void ButtonGoWisata()
     {
-        
+        SceneManager.LoadScene("Astrowisata"); 
     }
 }
