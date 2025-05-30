@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "731589794418",
+    "project_id": "astro-hub-3b4c9",
+    "storage_bucket": "astro-hub-3b4c9.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:731589794418:android:16d2d5ac4db2d32ca740eb",
+        "android_client_info": {
+          "package_name": "com.astronomi.astrowisata"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGedJ7YwNMfnmxrjZjRxsiXjFB5FbP1nE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
