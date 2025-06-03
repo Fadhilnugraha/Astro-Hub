@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenuWisata.unity
     guid: 29ddeef28aea5d445befc32ecb1d3601
+  - enabled: 1
+    path: Assets/Scenes/Artikel1.unity
+    guid: 86c9a9c61ee689c46ab18bc364dd9040
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a43f42334c225404f97b27535aaa3b4a, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
