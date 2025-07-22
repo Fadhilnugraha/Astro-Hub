@@ -20,7 +20,7 @@ public class FirebaseManager : MonoBehaviour
             {
                 if (task.Result == DependencyStatus.Available)
                 {
-                    dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+                    dbRef = FirebaseDatabase.GetInstance("https://astro-hub-3b4c9-default-rtdb.asia-southeast1.firebasedatabase.app/").RootReference;
                     Debug.Log("Firebase initialized.");
                 }
                 else
@@ -39,7 +39,14 @@ public class FirebaseManager : MonoBehaviour
     public void UploadArticle(Article article)
     {
         string key = dbRef.Child("articles").Push().Key;
-        dbRef.Child("articles").Child(key).SetRawJsonValueAsync(JsonUtility.ToJson(article));
+        dbRef.Child("articles").Child(key).SetRawJsonValueAsync(JsonUtility.ToJson(article))
+        .ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCompletedSuccessfully)
+                Debug.Log("Artikel berhasil di-upload.");
+            else
+                Debug.LogError("Gagal upload: " + task.Exception);
+        });
     }
 
     // Read all articles

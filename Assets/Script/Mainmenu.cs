@@ -38,6 +38,11 @@ public class Mainmenu : MonoBehaviour
         SceneManager.LoadScene("Artikel");
     }
 
+        public void Tulisartikel()
+    {
+        SceneManager.LoadScene("Tulisartikel");
+    }
+
     public void ButtonGoWisata()
     {
         SceneManager.LoadScene("Mainmenuwisata");
