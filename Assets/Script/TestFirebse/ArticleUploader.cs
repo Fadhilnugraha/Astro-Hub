@@ -1,15 +1,19 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
+
 
 public class ArticleUploader : MonoBehaviour
 {
-    public InputField titleInput;
-    public InputField contentInput;
-    public InputField authorInput;
+    public TMP_InputField TitleInput;
+    public TMP_InputField contentInput;
+    public TMP_InputField authorInput;
+
+    
 
     public void OnUploadButtonClick()
     {
-        string title = titleInput.text;
+        string title = TitleInput.text;
         string content = contentInput.text;
         string author = authorInput.text;
 
