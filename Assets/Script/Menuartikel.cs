@@ -1,19 +1,18 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class Menuartikel : MonoBehaviour
 {
+    
     public void Buttonbacktomenu()
     {
         SceneManager.LoadScene("Main menu");
     }
 
-    public void BToA1()
+    public void Buttontotulis()
     {
-        SceneManager.LoadScene("Artikel1");
+        SceneManager.LoadScene("Tulisartikel");
     }
 
-    public void BToA2()
-    {
-        SceneManager.LoadScene("Artikel2");
-    }
 }
