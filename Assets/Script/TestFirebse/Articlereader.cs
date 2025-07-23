@@ -19,7 +19,15 @@ public class ArticleReader : MonoBehaviour
             foreach (var article in articles)
             {
                 GameObject item = Instantiate(articleItemPrefab, contentPanel);
-                item.GetComponentInChildren<Text>().text = article.title + "\n" + article.author + "\n" + article.content;
+                ArticleItem itemScript = item.GetComponent<ArticleItem>();
+                if (itemScript != null)
+                {
+                    itemScript.SetArticle(article);
+                }
+                else
+                {
+                    Debug.LogWarning("ArticleItem script not found on prefab!");
+                }
             }
         });
     }

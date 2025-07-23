@@ -19,8 +19,8 @@ public class ArticleListUI : MonoBehaviour
             var texts = item.GetComponentsInChildren<TextMeshProUGUI>();
 
             texts[0].text = article.title;
-            texts[1].text = article.content.Length > 100 
-                ? article.content.Substring(0, 100) + "..." 
+            texts[1].text = article.content.Length > 15 
+                ? article.content.Substring(0, 15) + "..." 
                 : article.content;
         }
 

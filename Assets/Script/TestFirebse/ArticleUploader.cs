@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Firebase.Database;
+using UnityEngine.SceneManagement;
 
 public class ArticleUploader : MonoBehaviour
 {
@@ -26,4 +27,11 @@ public class ArticleUploader : MonoBehaviour
         FirebaseManager.Instance.UploadArticle(article);
         Debug.Log("Article uploaded");
     }
+
+    
+    public void Buttonbacktomenu()
+    {
+        SceneManager.LoadScene("Main menu");
+    }
+
 }
