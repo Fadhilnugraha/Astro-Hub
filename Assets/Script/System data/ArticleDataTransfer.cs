@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ArticleDataTransfer
+public static class ArticleDataTransfer
 {
    public static Article selectedArticle; 
 }

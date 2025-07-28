@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class Menuartikel : MonoBehaviour
 {
-    
+
     public void Buttonbacktomenu()
     {
         SceneManager.LoadScene("Main menu");
@@ -14,5 +14,5 @@ public class Menuartikel : MonoBehaviour
     {
         SceneManager.LoadScene("Tulisartikel");
     }
-
+    
 }

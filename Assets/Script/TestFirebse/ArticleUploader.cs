@@ -26,6 +26,7 @@ public class ArticleUploader : MonoBehaviour
         Article article = new Article(title, content, author);
         FirebaseManager.Instance.UploadArticle(article);
         Debug.Log("Article uploaded");
+        SceneManager.LoadScene("Screen_done_upload");
     }
 
     

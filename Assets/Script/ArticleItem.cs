@@ -13,11 +13,19 @@ public class ArticleItem : MonoBehaviour
         articleData = article;
         titleText.text = article.title;
 
-
     }
 
     public void pindahbaca()
     {
+        if (articleData == null)
+    {
+        Debug.LogError("articleData masih NULL sebelum LoadScene");
+    }
+    else
+    {
+        Debug.Log("articleData yang diklik: " + articleData.title);
+    }
+
         ArticleDataTransfer.selectedArticle = articleData;
         SceneManager.LoadScene("Article_reader_detaile");
     }
