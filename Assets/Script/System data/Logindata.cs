@@ -1,36 +1,72 @@
+using System.Collections;
 using UnityEngine;
-using System;
+using UnityEngine.UI;
 using Firebase;
-using Firebase.Database;
-using Firebase.Extensions;
-using Firebase.Storage;
 using Firebase.Auth;
-using Google.MiniJSON;
+using Firebase.Extensions;
+using TMPro;
 
-[Serializable]
-
-public class logindata
-{
-    public string Email;
-    public string password;
-    
-}
 public class Logindata : MonoBehaviour
 {
-    public logindata dts;
-    public string userID;
-    DatabaseReference dbRef;
+    [Header("Register")]
+    public TMP_InputField registerEmailInput;
+    public TMP_InputField registerPasswordInput;
 
-    private void Awake()
+    [Header("Login")]
+    public TMP_InputField loginEmailInput;
+    public TMP_InputField loginPasswordInput;
+
+    [Header("Status")]
+    public Text statusText;
+
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+
+    void Start()
     {
-
-        dbRef = FirebaseDatabase.DefaultInstance.RootReference;
+        FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
+        {
+            FirebaseApp app = FirebaseApp.DefaultInstance;
+            auth = FirebaseAuth.DefaultInstance;
+            statusText.text = "Firebase initialized.";
+        });
     }
 
-    public void login()
+    // Call Register Button
+    public void RegisterUser()
     {
-        string json = JsonUtility.ToJson(dts);
-        dbRef.Child("Users").Child(userID).SetRawJsonValueAsync(json);
+        string email = registerEmailInput.text;
+        string password = registerPasswordInput.text;
 
+        auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                statusText.text = "Register failed: " + task.Exception?.Flatten().InnerExceptions[0].Message;
+                return;
+            }
+
+            //user = task.Result;
+            statusText.text = "Register successful! User: " + user.Email;
+        });
+    }
+
+    // Call Login Button
+    public void LoginUser()
+    {
+        string email = loginEmailInput.text;
+        string password = loginPasswordInput.text;
+
+        auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+        {
+            if (task.IsCanceled || task.IsFaulted)
+            {
+                statusText.text = "Login failed: " + task.Exception?.Flatten().InnerExceptions[0].Message;
+                return;
+            }
+
+            //user = task.Result;
+            statusText.text = "Login successful! Welcome: " + user.Email;
+        });
     }
 }

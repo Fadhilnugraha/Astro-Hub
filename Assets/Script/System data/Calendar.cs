@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
 
-public class Calendar
+public class Calendar:MonoBehaviour
 {
  // <summary>
     /// Cell or slot in the calendar. All the information each day should now about itself

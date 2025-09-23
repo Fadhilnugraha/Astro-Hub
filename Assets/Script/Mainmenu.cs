@@ -48,6 +48,10 @@ public class Mainmenu : MonoBehaviour
         SceneManager.LoadScene("Mainmenuwisata");
     }
 
+    public void ButtonGoLogin()
+    {
+        SceneManager.LoadScene("Login screen");
+    }
     public void ButtonQuit()
     {
         Application.Quit();

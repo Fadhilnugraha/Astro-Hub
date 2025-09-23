@@ -35,6 +35,19 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
+    // Login data awake
+    public void Logindata(Logindata Login)
+    {
+        string key = dbRef.Child("email").Push().Key;
+        //dbRef.Child("email").Child(key).SetRawJsonValueAsync(JsonUtility.ToJson(Login))
+        //.ContinueWithOnMainThread(task =>
+        {
+           // if (as)
+        }
+    }
+
+
+
     // Write an article
     public void UploadArticle(Article article)
     {
