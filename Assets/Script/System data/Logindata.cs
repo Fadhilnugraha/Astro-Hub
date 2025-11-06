@@ -1,10 +1,14 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Firebase;
 using Firebase.Auth;
+using Firebase.Firestore;
 using Firebase.Extensions;
 using TMPro;
+using System.Data.Common;
+using UnityEngine.SceneManagement;
 
 public class Logindata : MonoBehaviour
 {
@@ -24,10 +28,12 @@ public class Logindata : MonoBehaviour
 
     void Start()
     {
+        FirebaseFirestore db; 
         FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>
         {
             FirebaseApp app = FirebaseApp.DefaultInstance;
             auth = FirebaseAuth.DefaultInstance;
+            db = FirebaseFirestore.DefaultInstance;
             statusText.text = "Firebase initialized.";
         });
     }
@@ -43,12 +49,21 @@ public class Logindata : MonoBehaviour
             if (task.IsCanceled || task.IsFaulted)
             {
                 statusText.text = "Register failed: " + task.Exception?.Flatten().InnerExceptions[0].Message;
+                Debug.Log("Register Failed");
                 return;
             }
+            else
+            {
 
-            //user = task.Result;
-            statusText.text = "Register successful! User: " + user.Email;
+                //user = task.Result;
+                statusText.text = "Register successful! User: " + user.Email;
+                SceneManager.LoadScene("Main menu");
+                Debug.Log("register success");
+            }
+
         });
+       
+            
     }
 
     // Call Login Button
@@ -62,11 +77,17 @@ public class Logindata : MonoBehaviour
             if (task.IsCanceled || task.IsFaulted)
             {
                 statusText.text = "Login failed: " + task.Exception?.Flatten().InnerExceptions[0].Message;
+                Debug.Log("Login Failed");
                 return;
             }
+            else
+            {
 
-            //user = task.Result;
-            statusText.text = "Login successful! Welcome: " + user.Email;
+                //user = task.Result;
+                statusText.text = "Login successful! Welcome: " + user.Email;
+                SceneManager.LoadScene("Main menu");
+                Debug.Log("Login Success");
+            }
         });
     }
 }

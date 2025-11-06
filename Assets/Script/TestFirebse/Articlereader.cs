@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class ArticleReader : MonoBehaviour
 {
-    public Transform contentPanel;
+    public Transform contentPanel; 
     public GameObject articleItemPrefab; // UI prefab to display one article
 
     void Start()
