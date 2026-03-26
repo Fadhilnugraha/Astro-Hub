@@ -9,6 +9,7 @@ Library: C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm6
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Unity file\Tugas akhir\Astro-Hub\Temp\Burst
+--debug=Full
 --key-folder=D:/Editing app/Unity/6000.0.36f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Unity file\Tugas akhir\Astro-Hub\Library\Burst
 --output=C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -124,6 +125,7 @@ Library: C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm6
 --target-framework=NetFramework
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Unity file\Tugas akhir\Astro-Hub\Temp\Burst
+--debug=Full
 --key-folder=D:/Editing app/Unity/6000.0.36f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Unity file\Tugas akhir\Astro-Hub\Library\Burst
 --output=C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated
@@ -147,6 +149,7 @@ Library: C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm6
 --float-mode=Fast
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Unity file\Tugas akhir\Astro-Hub\Temp\Burst
+--debug=Full
 --key-folder=D:/Editing app/Unity/6000.0.36f1/Editor/Data/PlaybackEngines/AndroidPlayer
 --decode-folder=C:\Unity file\Tugas akhir\Astro-Hub\Library\Burst
 --output=C:\Unity file\Tugas akhir\Astro-Hub\Temp\BurstOutput\tempburstlibs\arm64-v8a\lib_burst_generated

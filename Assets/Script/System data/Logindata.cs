@@ -9,6 +9,7 @@ using Firebase.Extensions;
 using TMPro;
 using System.Data.Common;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
 
 public class Logindata : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class Logindata : MonoBehaviour
 
     private FirebaseAuth auth;
     private FirebaseUser user;
+    private FirebaseFirestore db;
 
     void Start()
     {
@@ -49,20 +51,22 @@ public class Logindata : MonoBehaviour
             if (task.IsCanceled || task.IsFaulted)
             {
                 statusText.text = "Register failed: " + task.Exception?.Flatten().InnerExceptions[0].Message;
+                Debug.Log("Register failed because"+task.Exception?.Flatten().InnerExceptions[0].Message);
                 Debug.Log("Register Failed");
                 return;
             }
             else
             {
-
                 //user = task.Result;
                 statusText.text = "Register successful! User: " + user.Email;
-                SceneManager.LoadScene("Main menu");
-                Debug.Log("register success");
+                Debug.Log("Register berhasil dengan user"+user.Email);
+
             }
+                
 
         });
-       
+    SceneManager.LoadScene("Main menu");
+    //Debug.Log("Register success");
             
     }
 
@@ -85,9 +89,33 @@ public class Logindata : MonoBehaviour
 
                 //user = task.Result;
                 statusText.text = "Login successful! Welcome: " + user.Email;
-                SceneManager.LoadScene("Main menu");
-                Debug.Log("Login Success");
+
+            } 
+        });
+        SceneManager.LoadScene("Main menu");
+        Debug.Log("Login Success");
+    }
+
+    //User data
+    void SaveUsertoFirbase(FirebaseUser newUser)
+    {
+        Dictionary<string, object> userData = new Dictionary<string, object>
+        {
+            {"email",newUser.Email},
+            {"uid",newUser.UserId},
+            {"email","user"},
+            {"email",FieldValue.ServerTimestamp}
+        };
+        db.Collection("users").Document(newUser.UserId).SetAsync(userData).ContinueWithOnMainThread(Task =>
+        {
+            if (Task.IsCompleted){
+                Debug.Log("User save to Firestore");
+                Debug.Log("selamat datang"+newUser);
             }
+            else
+                Debug.LogError("Error to save user:" + Task.Exception);
         });
     }
+
+
 }

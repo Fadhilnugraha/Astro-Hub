@@ -1,18 +1,24 @@
-[System.Serializable]
+using Firebase.Firestore;
+
+[FirestoreData]
 public class Article
 {
-    public string title;
-    public string content;
-    public string author;
-    public string timestamp;
+    [FirestoreProperty]public string Judul{get;set;}
+    [FirestoreProperty]public string IsiArtikel{get;set;}
+    [FirestoreProperty]public string JenisArtikel{get;set;}
+    [FirestoreProperty]public string AuthorId{get;set;}
+    [FirestoreProperty]public string StatusArtikel{get;set;}
+    [FirestoreProperty]public Timestamp createdAt{get;set;}
 
     public Article() {} // Required for Firebase
 
-    public Article(string title, string content, string author)
+    public Article(string judul, string isi, string jenis, string authorId, string status)
     {
-        this.title = title;
-        this.content = content;
-        this.author = author;
-        this.timestamp = System.DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:ssZ");
+        Judul = judul;
+        IsiArtikel = isi;
+        JenisArtikel = jenis;
+        AuthorId = authorId;
+        StatusArtikel = status;
+        createdAt = Timestamp.GetCurrentTimestamp();
     }
 }

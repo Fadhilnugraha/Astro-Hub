@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using TMPro;
+using Firebase.Auth;
+using Firebase.Firestore;
+using Firebase.Extensions;
 
 public class Mainmenu : MonoBehaviour
 {
@@ -9,12 +13,49 @@ public class Mainmenu : MonoBehaviour
     public Vector2 hiddenPos;          // Posisi tertutup
     public Vector2 shownPos;           // Posisi terbuka
 
+    public TextMeshProUGUI greetingText; //kalimat ucapan
+
 
     private bool isOpen = false;
 
     void Start()
     {
     panel.anchoredPosition = hiddenPos; // supaya awalnya tersembunyi
+
+    ShowUserGreeting();
+    }
+
+    void ShowUserGreeting()               // fungsi ucapan
+    {
+        Debug.Log("user greeting dipanggil");
+        var user = FirebaseAuth.DefaultInstance.CurrentUser;
+        
+        if (user == null)
+        {
+        greetingText.text = "Halo, Pengunjung!";
+        return;
+        }
+        
+        string uid = user.UserId;
+        FirebaseFirestore db = FirebaseFirestore.DefaultInstance;
+        
+        db.Collection("User").Document(uid).GetSnapshotAsync()
+        .ContinueWithOnMainThread(task =>
+        {
+            if (!task.IsCompleted || !task.Result.Exists)
+            {
+                greetingText.text = "Halo, User!";
+                return;
+            }
+
+            var data = task.Result.ToDictionary();
+
+            string nama = data.ContainsKey("nama") && data["nama"] != null
+                ? data["nama"].ToString()
+                : "User";
+
+            greetingText.text = "Halo, " + nama + "!";
+        });
     }
     public void TogglePanel()
     {
@@ -52,8 +93,13 @@ public class Mainmenu : MonoBehaviour
     {
         SceneManager.LoadScene("Login screen");
     }
+    public void Buttonuser()
+    {
+        SceneManager.LoadScene("User data");
+    }
     public void ButtonQuit()
     {
         Application.Quit();
     }
+
 }

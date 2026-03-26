@@ -14,16 +14,18 @@ public class ArticleListUI : MonoBehaviour
     void OnArticlesLoaded(List<Article> articles)
     {
         foreach (var article in articles)
-        {
-            GameObject item = Instantiate(articleItemPrefab, contentParent);
-            var texts = item.GetComponentsInChildren<TextMeshProUGUI>();
+         {
+        GameObject item = Instantiate(articleItemPrefab, contentParent);
+        var texts = item.GetComponentsInChildren<TextMeshProUGUI>();
 
-            texts[0].text = article.title;
-            
-            texts[1].text = article.content.Length > 30 
-                ? article.content.Substring(0, 30) + "..." 
-                : article.content;
-        }
+        texts[0].text = article.Judul;
+
+        string preview = article.IsiArtikel.Length > 30
+            ? article.IsiArtikel.Substring(0, 30) + "..."
+            : article.IsiArtikel;
+
+        texts[1].text = preview;
+    }
 
     }
 }

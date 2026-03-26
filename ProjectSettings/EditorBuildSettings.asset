@@ -41,9 +41,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Login_menu.unity
     guid: 6b732c46d62d1264289342ddf4643887
+  - enabled: 1
+    path: Assets/Scenes/User data.unity
+    guid: ee10a3ea43f3b924391f49ed392c13c5
   m_configObjects:
     com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: dc780597013a1214aa8a2a3284e14899, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 2f2bd0910152db044b518a2ee9bcc510, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: a43f42334c225404f97b27535aaa3b4a, type: 2}
+    com.unity.input.settings: {fileID: 11400000, guid: ebff154cea5c824448e80f37653c1282, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

@@ -1,4 +1,7 @@
 using UnityEngine;
+using TMPro;
+using Firebase.Firestore;
+using Firebase.Extensions;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
@@ -7,28 +10,47 @@ public class ArticleReader : MonoBehaviour
     public Transform contentPanel; 
     public GameObject articleItemPrefab; // UI prefab to display one article
 
+    
+
+    private FirebaseFirestore db;
     void Start()
     {
+        db = FirebaseFirestore.DefaultInstance;
         LoadArticles();
     }
 
     void LoadArticles()
     {
-        FirebaseManager.Instance.GetAllArticles((articles) =>
+    db.Collection("Articles").GetSnapshotAsync().ContinueWithOnMainThread(task =>
         {
-            foreach (var article in articles)
+            if (task.IsCompleted)
             {
-                GameObject item = Instantiate(articleItemPrefab, contentPanel);
-                ArticleItem itemScript = item.GetComponent<ArticleItem>();
-                if (itemScript != null)
+                QuerySnapshot snapshots=task.Result;
+                //GameObject item = Instantiate(articleItemPrefab, contentPanel);
+                //ArticleItem itemScript = item.GetComponent<ArticleItem>();
+
+                foreach(DocumentSnapshot doc in snapshots.Documents)
                 {
-                    itemScript.SetArticle(article);
+                    Dictionary<string,object> data= doc.ToDictionary();
+
+                    GameObject item = Instantiate(articleItemPrefab, contentPanel);
+                    ArticleItem itemScript = item.GetComponent<ArticleItem>();
+
+                    if (itemScript != null)
+                    {
+                        itemScript.SetArticle(data);
+                    }
+
+
                 }
-                else
-                {
-                    Debug.LogWarning("ArticleItem script not found on prefab!");
-                }
+
+            }
+            else
+            {
+                Debug.LogError("gagal mengambil artikel:"+task.Exception);
             }
         });
     }
+
+    
 }

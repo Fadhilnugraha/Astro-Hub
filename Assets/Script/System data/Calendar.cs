@@ -1,184 +1,108 @@
 using UnityEngine;
-using System.Collections;
-using System.Collections.Generic;
 using System;
 using UnityEngine.UI;
+using TMPro;
 
-public class Calendar:MonoBehaviour
+public class Calendar : MonoBehaviour
 {
- // <summary>
-    /// Cell or slot in the calendar. All the information each day should now about itself
-    /// </summary>
-    public class Day
+    [Serializable]
+    public class DayColumn
     {
-        public int dayNum;
-        public Color dayColor;
-        public GameObject obj;
-
-        /// <summary>
-        /// Constructor of Day
-        /// </summary>
-        public Day(int dayNum, Color dayColor, GameObject obj)
-        {
-            this.dayNum = dayNum;
-            this.obj = obj;
-            UpdateColor(dayColor);
-            UpdateDay(dayNum);
-        }
-
-        /// <summary>
-        /// Call this when updating the color so that both the dayColor is updated, as well as the visual color on the screen
-        /// </summary>
-        public void UpdateColor(Color newColor)
-        {
-            obj.GetComponent<Image>().color = newColor;
-            dayColor = newColor;
-        }
-
-        /// <summary>
-        /// When updating the day we decide whether we should show the dayNum based on the color of the day
-        /// This means the color should always be updated before the day is updated
-        /// </summary>
-        public void UpdateDay(int newDayNum)
-        {
-            this.dayNum = newDayNum;
-            if(dayColor == Color.white || dayColor == Color.green)
-            {
-                obj.GetComponentInChildren<Text>().text = (dayNum + 1).ToString();
-            }
-            else
-            {
-                obj.GetComponentInChildren<Text>().text = "";
-            }
-        }
+        public Transform column; // Senin, Selasa, dst
     }
 
-    /// <summary>
-    /// All the days in the month. After we make our first calendar we store these days in this list so we do not have to recreate them every time.
-    /// </summary>
-    private List<Day> days = new List<Day>();
+    public DayColumn[] daysOfWeek; // WAJIB size = 7 (Senin–Minggu)
+    public TextMeshProUGUI monthAndYear;
 
-    /// <summary>
-    /// Setup in editor since there will always be six weeks. 
-    /// Try to figure out why it must be six weeks even though at most there are only 31 days in a month
-    /// </summary>
-    public Transform[] weeks;
+    private Image[,] cells = new Image[7, 6];
+    private TextMeshProUGUI[,] texts = new TextMeshProUGUI[7, 6];
 
-    /// <summary>
-    /// This is the text object that displays the current month and year
-    /// </summary>
-    public Text MonthAndYear;
+    private DateTime currDate;
 
-    /// <summary>
-    /// this currDate is the date our Calendar is currently on. The year and month are based on the calendar, 
-    /// while the day itself is almost always just 1
-    /// If you have some option to select a day in the calendar, you would want the change this objects day value to the last selected day
-    /// </summary>
-    public DateTime currDate = DateTime.Now;
-
-    /// In start we set the Calendar to the current date
-
-    private void Start()
+    void Start()
     {
+        CacheCells();
         UpdateCalendar(DateTime.Now.Year, DateTime.Now.Month);
     }
 
-    /// Anytime the Calendar is changed we call this to make sure we have the right days for the right month/year
-    
+    // =============================
+    // CACHE CELL (AMAN)
+    // =============================
+    void CacheCells()
+    {
+        for (int d = 0; d < 7; d++)
+        {
+            Transform column = daysOfWeek[d].column;
+
+            if (column.childCount < 6)
+            {
+                Debug.LogError($"Kolom {column.name} harus punya 6 child!");
+                return;
+            }
+
+            for (int w = 0; w < 6; w++)
+            {
+                Transform cell = column.GetChild(w);
+                cells[d, w] = cell.GetComponent<Image>();
+                texts[d, w] = cell.GetComponentInChildren<TextMeshProUGUI>();
+            }
+        }
+    }
+
+    // =============================
+    // UPDATE CALENDAR
+    // =============================
     void UpdateCalendar(int year, int month)
     {
-        DateTime temp = new DateTime(year, month, 1);
-        currDate = temp;
-        MonthAndYear.text = temp.ToString("MMMM") + " " + temp.Year.ToString();
-        int startDay = GetMonthStartDay(year,month);
-        int endDay = GetTotalNumberOfDays(year, month);
-        
+        currDate = new DateTime(year, month, 1);
+        monthAndYear.text = currDate.ToString("MMMM yyyy");
 
-        ///Create the days
-        ///This only happens for our first Update Calendar when we have no Day objects therefore we must create them
+        int startDay = ((int)currDate.DayOfWeek + 6) % 7; // Senin = 0
+        int totalDays = DateTime.DaysInMonth(year, month);
 
-        if(days.Count == 0)
+        // reset semua cell
+        for (int d = 0; d < 7; d++)
         {
             for (int w = 0; w < 6; w++)
             {
-                for (int i = 0; i < 7; i++)
-                {
-                    Day newDay;
-                    int currDay = (w * 7) + i;
-                    if (currDay < startDay || currDay - startDay >= endDay)
-                    {
-                        newDay = new Day(currDay - startDay, Color.grey,weeks[w].GetChild(i).gameObject);
-                    }
-                    else
-                    {
-                        newDay = new Day(currDay - startDay, Color.white,weeks[w].GetChild(i).gameObject);
-                    }
-                    days.Add(newDay);
-                }
+                texts[d, w].text = "";
+                cells[d, w].color = Color.grey;
             }
         }
-        ///loop through days
-        ///Since we already have the days objects, we can just update them rather than creating new ones
-        else
+
+        // isi tanggal
+        for (int day = 1; day <= totalDays; day++)
         {
-            for(int i = 0; i < 42; i++)
+            int index = startDay + (day - 1);
+            int col = index % 7;
+            int row = index / 7;
+
+            texts[col, row].text = day.ToString();
+            cells[col, row].color = Color.white;
+
+            CalendarCell cell = cells[col, row].GetComponent<CalendarCell>();
+                if (cell != null)
+                {
+                    DateTime date = new DateTime(year,month, day);
+                    cell.Setup(date,this);
+                }
+
+            // highlight hari ini
+            if (DateTime.Now.Year == year &&
+                DateTime.Now.Month == month &&
+                DateTime.Now.Day == day)
             {
-                if(i < startDay || i - startDay >= endDay)
-                {
-                    days[i].UpdateColor(Color.grey);
-                }
-                else
-                {
-                    days[i].UpdateColor(Color.white);
-                }
-
-                days[i].UpdateDay(i - startDay);
+                cells[col, row].color = Color.green;
             }
         }
-
-        ///This just checks if today is on our calendar. If so, we highlight it in green
-        if(DateTime.Now.Year == year && DateTime.Now.Month == month)
-        {
-            days[(DateTime.Now.Day - 1) + startDay].UpdateColor(Color.green);
-        }
-
     }
 
-    /// <summary>
-    /// This returns which day of the week the month is starting on
-    /// </summary>
-    int GetMonthStartDay(int year, int month)
+    // =============================
+    // SWITCH MONTH
+    // =============================
+    public void SwitchMonth(int dir)
     {
-        DateTime temp = new DateTime(year, month, 1);
-
-        //DayOfWeek Sunday == 0, Saturday == 6 etc.
-        return (int)temp.DayOfWeek;
-    }
-
-    /// <summary>
-    /// Gets the number of days in the given month.
-    /// </summary>
-    int GetTotalNumberOfDays(int year, int month)
-    {
-        return DateTime.DaysInMonth(year, month);
-    }
-
-    /// <summary>
-    /// This either adds or subtracts one month from our currDate.
-    /// The arrows will use this function to switch to past or future months
-    /// </summary>
-    public void SwitchMonth(int direction)
-    {
-        if(direction < 0)
-        {
-            currDate = currDate.AddMonths(-1);
-        }
-        else
-        {
-            currDate = currDate.AddMonths(1);
-        }
-
+        currDate = currDate.AddMonths(dir > 0 ? 1 : -1);
         UpdateCalendar(currDate.Year, currDate.Month);
     }
-
 }

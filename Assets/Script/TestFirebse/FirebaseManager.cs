@@ -4,11 +4,13 @@ using Firebase.Firestore;
 using Firebase.Extensions;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class FirebaseManager : MonoBehaviour
 {
     public static FirebaseManager Instance;
     private DatabaseReference dbRef;
+    private FirebaseFirestore firestore;
 
     void Awake()
     {
@@ -21,7 +23,7 @@ public class FirebaseManager : MonoBehaviour
             {
                 if (task.Result == DependencyStatus.Available)
                 {
-                    dbRef = FirebaseDatabase.GetInstance("https://astro-hub-3b4c9-default-rtdb.asia-southeast1.firebasedatabase.app/").RootReference;
+                    firestore = FirebaseFirestore.DefaultInstance;  
                     Debug.Log("Firebase initialized.");
                 }
                 else
@@ -36,6 +38,18 @@ public class FirebaseManager : MonoBehaviour
         }
     }
 
+    public void UploadArticle(Article article)
+    {
+        firestore.Collection("articles").AddAsync(article)
+        .ContinueWithOnMainThread(Task=>
+        {
+            if(Task.IsCompletedSuccessfully)
+            Debug.Log("article berhasil diupload");
+            else
+            Debug.LogError("Artikel gagal terupload"+Task.Exception);
+        });
+    }
+
     // Login data awake
     public void Logindata(Logindata Login)
     {
@@ -48,39 +62,28 @@ public class FirebaseManager : MonoBehaviour
     }
 
 
-
-    // Write an article
-    public void UploadArticle(Article article)
-    {
-        string key = dbRef.Child("articles").Push().Key;
-        dbRef.Child("articles").Child(key).SetRawJsonValueAsync(JsonUtility.ToJson(article))
-        .ContinueWithOnMainThread(task =>
-        {
-            if (task.IsCompletedSuccessfully)
-                Debug.Log("Artikel berhasil di-upload.");
-            else
-                Debug.LogError("Gagal upload: " + task.Exception);
-        });
-    }
-
     // Read all articles
     public void GetAllArticles(System.Action<List<Article>> callback)
     {
-        dbRef.Child("articles").GetValueAsync().ContinueWithOnMainThread(task =>
+        
+        firestore.Collection("Articles").GetSnapshotAsync()
+        .ContinueWithOnMainThread(task =>
         {
-            if (task.IsCompleted)
-            {
-                DataSnapshot snapshot = task.Result;
-                List<Article> articles = new List<Article>();
+            List<Article> articles = new List<Article>();
 
-                foreach (var child in snapshot.Children)
+            if (task.IsCompletedSuccessfully)
+            {
+                foreach (var doc in task.Result.Documents)
                 {
-                    string json = child.GetRawJsonValue();
-                    Article article = JsonUtility.FromJson<Article>(json);
-                    articles.Add(article);
+                    Article a = doc.ConvertTo<Article>(); 
+                    articles.Add(a);
                 }
 
                 callback?.Invoke(articles);
+            }
+            else
+            {
+                Debug.LogError("Gagal mengambil artikel: " + task.Exception);
             }
         });
     }
