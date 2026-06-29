@@ -8,6 +8,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using Firebase.Storage;
+using Firebase.Auth;
 
 public class ArticleUploader : MonoBehaviour
 {
@@ -16,28 +17,65 @@ public class ArticleUploader : MonoBehaviour
     public TMP_InputField authorInput;
 
     private FirebaseFirestore db;
-    private FirebaseStorage storage;
+    //private FirebaseStorage storage;
 
     void Start()
     {
         db = FirebaseFirestore.DefaultInstance;
-        storage = FirebaseStorage.DefaultInstance;
+        //storage = FirebaseStorage.DefaultInstance;
     }
     public void OnUploadButtonClick()
     {
         string title = TitleInput.text;
         string content = contentInput.text;
-        string author = authorInput.text;
+        //string author = authorInput.text;
 
-        Dictionary<string,object> articleData= new Dictionary<string, object>()
+        FirebaseUser user = FirebaseAuth.DefaultInstance.CurrentUser;
+
+        if (user == null)
         {
-            {"Judul",title},
-            {"Isi artikel",content},
-            {"Jenis artikel","edukasi"},
-            {"AuthorId", author},
-            {"Status artikel","draft"},
-            {"createdAt",Timestamp.GetCurrentTimestamp()}
-        };
+            Debug.LogError("User belum login");
+            return;
+        }
+
+        string userId = user.UserId;
+
+        db.Collection("User").Document(userId).GetSnapshotAsync().ContinueWithOnMainThread(userTask =>
+        {
+            if (!userTask.Result.Exists)
+            {
+                Debug.LogError("Data user tidak ditemukan!");
+                return;
+            }
+
+            string nama = userTask.Result.GetValue<string>("nama");
+
+                        Dictionary<string, object> articleData = new Dictionary<string, object>()
+            {
+                {"Judul", title},
+                {"Isi artikel", content},
+                {"Jenis artikel", "edukasi"},
+                {"AuthorId", userId},       // relasi utama
+                {"AuthorName", nama},       // biar cepat ditampilkan
+                {"Status artikel", "draft"},
+                {"createdAt", Timestamp.GetCurrentTimestamp()}
+            };
+
+        
+        
+
+
+
+      //  Dictionary<string,object> articleData= new Dictionary<string, object>()
+    // {
+    //        {"Judul",title},
+    //      {"Isi artikel",content},
+    //        {"Jenis artikel","edukasi"},
+    //       {"AuthorId", author},
+    //        {"AuthorName", nama},
+    //        {"Status artikel","draft"},
+    //        {"createdAt",Timestamp.GetCurrentTimestamp()}
+    //    };
 
         db.Collection("Articles").AddAsync(articleData).ContinueWithOnMainThread(task=>
         {
@@ -50,6 +88,8 @@ public class ArticleUploader : MonoBehaviour
             {
                 Debug.LogError(task.Exception);
             }
+        });
+
         });
         
         

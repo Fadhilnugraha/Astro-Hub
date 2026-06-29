@@ -27,7 +27,7 @@ public class ArticleItem : MonoBehaviour
 
         // contoh key Firestore:
         // "Judul" / "judul", "IsiArtikel" / "isiArtikel", "AuthorId" / "authorId"
-        // sesuaikan key dengan yang benar di Firestore
+        // sesuaikan dengan key yang ada di Firestore
         string title = GetString("Judul");
         if (string.IsNullOrEmpty(title)) title = GetString("judul"); // fallback jika pakai lowercase
 
@@ -39,7 +39,10 @@ public class ArticleItem : MonoBehaviour
         if (string.IsNullOrEmpty(author)) author = GetString("authorId");
 
         // assign ke UI (cek null reference)
-        if (titleText != null) titleText.text = title;
+     if (titleText != null) 
+     {
+        titleText.text = title;
+     }
         if (previewText != null)
         {
             string preview = string.IsNullOrEmpty(isi) ? "" :
@@ -50,6 +53,7 @@ public class ArticleItem : MonoBehaviour
            
     }
 
+    // tombol untuk pindah ke scene baca detail
     public void pindahbaca()
     {
         if (articleDict == null)

@@ -17,8 +17,9 @@ public class MemoUI : MonoBehaviour
         if (Instance==null){
         Instance = this;
         }
-        else
+        else{
         Destroy(gameObject);
+        }
         panel.SetActive(false);
     }
 
@@ -27,23 +28,30 @@ public class MemoUI : MonoBehaviour
         currentDate = date;
         panel.SetActive(true);
 
-        string key = GetKey(date);
-        title.text = PlayerPrefs.GetString(key,"");
-        input.text = PlayerPrefs.GetString(key, "");
+        //string key = GetKey(date);
+        title.text = PlayerPrefs.GetString(GetTitleKey(date),"");
+        input.text = PlayerPrefs.GetString(GetContentKey(date), "");
+    
 
         title.interactable=true;
         title.ActivateInputField();
 
         input.interactable=true;
         input.ActivateInputField();
+        Debug.Log(PlayerPrefs.GetString(GetContentKey(date)));
+        {
+            
+        }
     }
 
     public void Save()
     {
-        PlayerPrefs.SetString(GetKey(currentDate), input.text);
-        PlayerPrefs.SetString(GetKey(currentDate), title.text);
+        PlayerPrefs.SetString(GetTitleKey(currentDate), input.text);
+        PlayerPrefs.SetString(GetContentKey(currentDate), title.text);
         PlayerPrefs.Save();
         panel.SetActive(false);
+        Debug.Log("berhasil melakukan save");
+        Debug.Log(input.text);
     }
 
     public void Close()
@@ -51,8 +59,20 @@ public class MemoUI : MonoBehaviour
         panel.SetActive(false);
     }
 
-    string GetKey(DateTime date)
+    //string GetKey(DateTime date)
+    //{
+      //  return "MEMO_" + date.ToString("yyyy_MM_dd");
+    //}
+
+    string GetTitleKey(DateTime date)
     {
-        return "MEMO_" + date.ToString("yyyy_MM_dd");
+        return "Memo_title"+ date.ToString("yyyy_MM_dd");
     }
+
+    string GetContentKey(DateTime date)
+    {
+        return "Memo_content"+ date.ToString("yyyy_MM_dd");
+    }
+
+    //To Do : tambahin keterhubungan dengan Timeanddate
 }

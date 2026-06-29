@@ -140,10 +140,12 @@ PlayerSettings:
   loadStoreDebugModeEnabled: 0
   visionOSBundleVersion: 1.0
   tvOSBundleVersion: 1.0
-  bundleVersion: 1.4.5
+  bundleVersion: 0.1.14
   preloadedAssets:
   - {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   - {fileID: 11400000, guid: ebff154cea5c824448e80f37653c1282, type: 2}
+  - {fileID: -8319242808433086291, guid: 2f2bd0910152db044b518a2ee9bcc510, type: 2}
+  - {fileID: 11400000, guid: dc780597013a1214aa8a2a3284e14899, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -271,7 +273,7 @@ PlayerSettings:
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
   AndroidKeystoreName: '{inproject}: user.keystore'
-  AndroidKeyaliasName: fadhil1
+  AndroidKeyaliasName: admin
   AndroidEnableArmv9SecurityFeatures: 0
   AndroidEnableArm64MTE: 0
   AndroidBuildApkPerCpuArchitecture: 0
@@ -717,7 +719,8 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Standalone: 10
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
