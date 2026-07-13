@@ -15,12 +15,15 @@ public class Mainmenu : MonoBehaviour
 
     public TextMeshProUGUI greetingText; //kalimat ucapan
 
+    public GameObject login_btn;
+    public GameObject user_btn;
+
 
     private bool isOpen = false;
 
     void Start()
     {
-    panel.anchoredPosition = hiddenPos; // supaya awalnya tersembunyi
+    panel.anchoredPosition = hiddenPos; // awalnya tersembunyi
 
     ShowUserGreeting();
     }
@@ -32,6 +35,8 @@ public class Mainmenu : MonoBehaviour
         
         if (user == null)
         {
+        login_btn.SetActive(login_btn.activeSelf);
+        user_btn.SetActive(!user_btn.activeSelf);    
         greetingText.text = "Halo, Pengunjung!";
         return;
         }
@@ -56,7 +61,14 @@ public class Mainmenu : MonoBehaviour
 
             greetingText.text = "Halo, " + nama + "!";
         });
+        if (user != null)
+        {
+        login_btn.SetActive(!login_btn.activeSelf);
+        user_btn.SetActive(user_btn.activeSelf);  
+        }
     }
+
+
     public void TogglePanel()
     {
         isOpen = !isOpen;
@@ -86,7 +98,8 @@ public class Mainmenu : MonoBehaviour
 
     public void ButtonGoWisata()
     {
-        SceneManager.LoadScene("Mainmenuwisata");
+        //SceneManager.LoadScene("Mainmenuwisata");
+        SceneManager.LoadScene("Artikel2");
     }
 
     public void ButtonGoLogin()

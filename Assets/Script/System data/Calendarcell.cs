@@ -34,7 +34,12 @@ public class CalendarCell : MonoBehaviour
 
     void OnClick()
     {
-        MemoUI.Instance.Open(date);
+        //MemoUI.Instance.Open(date);
+
+        MemoList.Instance.LoadMemo(
+        date.ToString("yyyy-MM-dd")
+        );
         Debug.Log("memo muncul");
+        Debug.Log("SETUP DIPANGGIL -> " + date.ToString("yyyy_MM_dd"));
     }
 }

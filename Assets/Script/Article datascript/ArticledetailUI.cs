@@ -9,6 +9,7 @@ public class ArticledetailUI : MonoBehaviour
     
     public TextMeshProUGUI titleText;
     public TextMeshProUGUI contentText;
+    public TextMeshProUGUI authorText;
     void Start()
     {
         Dictionary<string, object> dict = ArticleDataTransfer.selectedArticleDict;
@@ -45,8 +46,14 @@ public class ArticledetailUI : MonoBehaviour
         if (string.IsNullOrEmpty(isi)) isi = Get("Isi artikel");
         if (string.IsNullOrEmpty(isi)) isi = Get("isiArtikel");
 
+        string author = Get("AuthorName");
+        if (string.IsNullOrEmpty(author)) author = Get("AuthorName");
+         
+
+
         titleText.text = title;
         contentText.text = isi;
+        authorText.text = author;
     }
         public void ButtonGoArtikel()
     {

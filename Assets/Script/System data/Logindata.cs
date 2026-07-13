@@ -97,13 +97,14 @@ public class Logindata : MonoBehaviour
     }
 
     //User data
-    void SaveUsertoFirbase(FirebaseUser newUser)
+    void SaveUsertoFirebase(FirebaseUser newUser)
     {
         Dictionary<string, object> userData = new Dictionary<string, object>
         {
             {"email",newUser.Email},
             {"uid",newUser.UserId},
             {"email","user"},
+            {"role","pengunjung"},
             {"email",FieldValue.ServerTimestamp}
         };
         db.Collection("users").Document(newUser.UserId).SetAsync(userData).ContinueWithOnMainThread(Task =>
