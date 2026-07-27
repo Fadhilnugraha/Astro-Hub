@@ -1510,7 +1510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &114957119
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6459,7 +6459,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 287, y: 10}
+  m_AnchoredPosition: {x: 287, y: -530}
   m_SizeDelta: {x: 156.2443, y: 143.5246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &648458772
@@ -10479,8 +10479,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000095367, y: 1.505}
-  m_SizeDelta: {x: 121.302, y: 125.59}
+  m_AnchoredPosition: {x: 0.0000038146973, y: 0}
+  m_SizeDelta: {x: 168.1631, y: 174.11}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1084534378
 MonoBehaviour:
@@ -10558,7 +10558,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 808604026969619999, guid: 9ae36c77784e351448e52d0f2b0b00f4, type: 3}
+  m_Sprite: {fileID: 1963951323657058052, guid: 00f5708efc139a44d82c0476cf7cc660, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10715,7 +10715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1105968247
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13626,7 +13626,7 @@ MonoBehaviour:
   m_Content: {fileID: 1420305049}
   m_Horizontal: 0
   m_Vertical: 1
-  m_MovementType: 0
+  m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
@@ -15078,16 +15078,16 @@ MonoBehaviour:
   m_Padding:
     m_Left: 0
     m_Right: 0
-    m_Top: 1
-    m_Bottom: 1
-  m_ChildAlignment: 1
+    m_Top: 50
+    m_Bottom: 50
+  m_ChildAlignment: 7
   m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
   m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
+  m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
 --- !u!1 &1425764855
 GameObject:
@@ -18800,8 +18800,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 284, y: 0.0000019073}
-  m_SizeDelta: {x: 118.3959, y: 122.58}
+  m_AnchoredPosition: {x: 280, y: 0.000002861}
+  m_SizeDelta: {x: 132.9276, y: 137.63}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1863574243
 MonoBehaviour:

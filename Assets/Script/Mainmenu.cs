@@ -99,7 +99,7 @@ public class Mainmenu : MonoBehaviour
     public void ButtonGoWisata()
     {
         //SceneManager.LoadScene("Mainmenuwisata");
-        SceneManager.LoadScene("Artikel2");
+        SceneManager.LoadScene("MainMenuWisata");
     }
 
     public void ButtonGoLogin()

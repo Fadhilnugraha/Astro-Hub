@@ -119,6 +119,81 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &130456770
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 130456771}
+  - component: {fileID: 130456773}
+  - component: {fileID: 130456772}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &130456771
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130456770}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1708665537}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 7813}
+  m_SizeDelta: {x: 474.1136, y: 271.4849}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &130456772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130456770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -506458688019858357, guid: 5645a56734bcb9748b915e93e268b5cb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &130456773
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 130456770}
+  m_CullTransparentMesh: 1
 --- !u!1 &357986215
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,8 +264,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1080, y: 1920}
+  m_AnchoredPosition: {x: -2.2569, y: -0.00014496}
+  m_SizeDelta: {x: 954.89, y: 2090.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &364853749
 MonoBehaviour:
@@ -539,7 +614,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1393078145}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.10249557
+  m_Size: 0.09758791
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -753,8 +828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 6.9227905, y: 0}
-  m_SizeDelta: {x: 875.6763, y: 1660.1348}
+  m_AnchoredPosition: {x: 10.665985, y: -15.9979}
+  m_SizeDelta: {x: 810.08, y: 1644.1367}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &889258396
 MonoBehaviour:
@@ -776,222 +851,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Membangun Wisata Bintang di Pulau Sabu\n\nPulau Sabu adalah pulau terbesar
-    dari tiga pulau di Kabupaten Sabu Raijua, Nusa Tenggara Timur (gambar 1). Nama
-    Sabu Raijua berasal dari nama dua pulau terbesar disana yaitu pulau Sabu dan
-    pulau Raijua. Yang terkecil adalah pulau Dana, jauh di Barat Daya pulau Sabu.
-    Pulau ini hanya sekitar 200 hektar luasnya dan tidak berpenghuni.\r\n\r\nKabupaten
-    Sabu Raijua yang terletak antara pulau Sumba dan Pulau Timor ditetapkan sebagai
-    sebuah kabupaten terpencil, terluar Indonesia,  berdasarkan Peraturan Presiden
-    Republik Indonesia Nomor 179 Tahun 2014. Pulau-pulau terpencil dan terluar mendapat
-    perhatian khusus dari pemerintah Indonesia karena memiliki nilai strategis dalam
-    menjaga keutuhan wilayah NKRI. Pelajaran dari lepasnya pulau Sipadan dan Ligitan,
-    menunjukkan pentingnya ada kegiatan di pulau terluar, terpencil dan tak berpenghuni
-    seperti pulau Dana. Apalagi jika pulau terpencil itu mengandung potensi ekonomi
-    yang besar, seperti pulau Sabu.\r\n\r\nUntuk mencapai pulau Sabu, dari ibukota
-    NTT, Kupang, kita dapat menumpang pesawat kecil berkapasitas 12 orang, yang terbang
-    sehari sekali pada hari Senin, Selasa dan Kamis. Lama penerbangan sekitar 50
-    menit ke arah Barat. Selain dengan pesawat terbang, jarak Kupang \u2013 Sabu
-    juga dapat ditempuh dengan kapal laut selama 8 jam. Kapal laut berangkat setiap
-    hari kecuali jika ada warning cuaca buruk dari BMKG. Biasanya pertengahan Mei
-    hingga akhir Agustus angin relatif lebih kencang, sehingga pada bulan-bulan itu
-    warning cuaca buruk dari BMKG lebih sering muncul dan pelayaran bisa ditunda
-    selama satu atau beberapa hari. \r\n\r\nBerdasarkan analisis Prof Taufiq Hidayat
-    (2012) pulau Sabu merupakan daerah dengan fraksi hari cerah tertinggi di Indonesia.
-    Kecerahan langit merupakan salah satu syarat utama keberhasilan mengamati benda
-    langit. Maka secara meteorologis pulau Sabu merupakan calon lokasi terbaik untuk
-    pendirian observatorium, kegiatan stargazing, astrofotografi dan lain-lain. \r\n\r\nPulau
-    Sabu merupakan tempat yang paling banyak fraksi hari cerahnya, sekitar 75%. Bandingkan
-    dengan Lembang, Jawa Barat yang hanya 46%, tapi mempunyai observatorium Bosscha
-    yang pernah menjadi salah satu observatorium penting belahan Bumi Selatan di
-    masa lalu. Kalau Pulau Sabu memiliki iklim yang terbaik untuk pengamatan benda
-    langit, mengapa para astronom ITB dan LAPAN (sekarang BRIN) memilih gunung Timau
-    yang fraksi hari cerahnya lebih kecil, 67% di Kabupaten Kupang sebagai lokasi
-    Observatorium terbesar Asia Tenggara? Alasannya adalah, karena gunung Timau memiliki
-    keunggulan lain, yaitu ketinggiannya dari permukaan laut sekitar 1300 m, sedangkan
-    titik tertinggi di pulau Sabu hanya 325 m. Sementara itu tingkat kecerahan langitnya
-    hanya sedikit lebih rendah dari pulau Sabu. Fakta ini memberi inspirasi, bahwa
-    Pulau Sabu berpotensi besar untuk dikembangkan menjadi destinasi astrowisata
-    alam permanen terbaik di Indonesia.\r\n\r\nApakah astrowisata itu? Astrowisata
-    adalah kegiatan kepariwisataan yang melibatkan benda langit sebagai obyek yang
-    dinikmati keindahannya. Dalam workshop astrowisata di Firenze, Italia tahun 2018,
-    disepakati definisi astrowisata atau astrotourism sebagai berikut: \u201CEvery
-    human journey or attitude to fulfill their soul\u2019s need for pleasure, knowledge
-    and curiosity about history, culture, science and technology on astronomy and
-    the Universe\u201D. Atau dalam bahasa Indonesia : Setiap perjalanan atau hasrat
-    manusia untuk memenuhi kebutuhannya akan kesenangan, pengetahuan dan keingintahuan
-    tentang sejarah, budaya, ilmu dan teknologi dalam astronomi dan alam semesta.
-    Definisi ini yang kemudian diajukan ke organisasi astronom profesional sedunia,
-    Internasional Astronomical Union (IAU) dalam rangka mengusulkan pembentukan Astrotourism
-    Working Group di dalam organisasi itu.\r\n\r\nDitinjau dari lokasinya, ada beberapa
-    jenis astrowisata, ada tempat astrowisata buatan yang permanen, seperti Skyworld,
-    Taman bintang, Planetarium dan lain-lain. Ada tempat astrowisata alam yang permanen
-    yang merupakan tempat yang baik untuk mengamati benda langit. Di dunia, lokasi
-    astrowisata alam permanen ini merupakan suatu Dark Sky Reserve area, suatu daerah
-    yang kegelapan lingkungannya dijaga, dijauhkan dari polusi cahaya agar langit
-    yang indah dapat dinikmati. Ada pula astrowisata yang tidak dilaksanakan di tempat
-    yang tetap melainkan bergantung pada ketepatan posisi dalam mengamati fenomena,
-    misalnya kegiatan mengamati dan menikmati Gerhana Matahari, Gerhana Bulan, okultasi
-    dan lain-lain. Tempat yang baik untuk melihat fenomena tersebut selalu berubah,
-    bergantung pada jenis fenomena, peredaran Bulan, peredaran Matahari, posisi Bumi
-    dan Rotasi Bumi. \r\n\r\nPolusi Cahaya\r\nDari cara pandang Astronomi, polusi
-    cahaya adalah keadaan langit yang lebih terang karena partikel atmosfer memantulkan,
-    membiaskan dan menghamburkan cahaya lampu atau sumber cahaya lain buatan manusia.
-    Langit yang lebih terang membuat galaksi dan bintang-bintang yang lebih redup
-    semakin sulit dilihat, sehingga daya tarik tempat yang berpolusi cahaya sebagai
-    destinasi astrowisata akan menurun.\r\n\r\nSelain keunggulan iklim, keunggulan
-    Pulau Sabu dalam bidang astrowisata adalah polusi cahayanya yang rendah, sehingga,
-    di malam hari yang cerah, wisatawan dapat melihat langit yang cantik dengan banyak
-    sekali bintang bertaburan. Galaksi Bimasakti, yang di kota-kota besar pulau Jawa
-    tak mungkin terlihat karena polusi cahaya, disana bisa terlihat dengan jelas
-    dan indah. Gambar 2 adalah contoh foto Bimasakti yang dipotret dari pulau Sabu.
-    Langit yang indah itu adalah potensi untuk menarik wisatawan terutama penggemar
-    astronomi.\r\n\r\nPolusi cahaya biasanya memburuk seiring dengan pertumbuhan
-    ekonomi. Jika wisatawan meningkat, dapat diduga cahaya malam hari yang dihasilkan
-    oleh kegiatan masyarakat juga dapat meningkat. Oleh karena itu diperlukan upaya-upaya
-    menghambat pertumbuhan polusi cahaya di masa depan. Hal itu dapat dilakukan dengan
-    upaya-upaya pencegahan cahaya buatan manusia terpancar ke angkasa, misalnya dengan
-    mewajibkan setiap lampu memakai tudung, mewajibkan gorden jendela terbuat dari
-    bahan kedap cahaya dan lain-lain. Perlindungan tersebut akan lebih kuat jika
-    didukung dengan peraturan daerah tentang pencegahan polusi cahaya.\r\n\r\nPenggemar
-    Astronomi\r\nBenarkah ada banyak orang yang gemar mengamati benda langit ? Banyaknya
-    pemberitaan di media ketika terjadi suatu peristiwa langit membuktikan ketertarikan
-    masyarakat kepada astronomi. Sebagai contoh, pada tanggal 9 Maret 2016 terjadi
-    Gerhana Matahari Total yang melalui beberapa kota di Indonesia. Ketika itu sangat
-    banyak wisatawan, termasuk wisatawan mancanegara, yang datang ke kota/daerah
-    yang dilalui gerhana, seperti Palembang, Belitung, Palangkaraya, Palu, Ternate
-    dan lain-lain. Saat Gerhana Matahari Total 2016 itu penulis melakukan sosialisasi
-    dan pengamatan di kota Palu. Ketika itu kota Palu dikunjungi sangat banyak wisatawan
-    asing dari berbagai negara, dalam group-group yang besar sehingga suasana internasionalnya
-    sangat terasa, seperti Bali. \r\n\r\nContoh lain, pada tanggal 31 Januari 2018
-    ada peristiwa Gerhana Bulan Total yang populer di media sosial dengan sebutan
-    \u201CSuper Blue Blood Moon\u201D yang dapat diamati di berbagai lokasi di Indonesia.
-    Ketika itu sangat banyak info beredar di media sosial, televisi dan media cetak
-    tentang fenomena itu. Banyak institusi dan klub-klub penggemar astronomi yang
-    menyelenggarakan event pengamatan bersama di berbagai kota. Hal ini nampak dari
-    ratusan poster yang beredar, berisi ajakan nonton gerhana bersama.  Masih banyak
-    peristiwa-peristiwa astronomi lain yang bisa menarik perhatian publik, seperti
-    hujan meteor, penampakan planet terang, kemunculan komet dan lain-lain.\r\n\r\nFakta
-    lain yang menunjukkan bahwa Astronomi menarik bagi publik adalah banyaknya klub-klub
-    penggemar astronomi. Di Indonesia ada lebih dari seratus klub astronom amatir
-    di berbagai kota. Sebelum pandemi beberapa kali klub-klub tersebut berkumpul
-    membuat jambore nasional di Watukosek, Pasuruan, menggunakan lokasi stasiun pengamatan
-    Matahari milik LAPAN. Tidak hanya di Indonesia, di negara-negara lain pun, terutama
-    negara maju ada banyak klub-klub astronom amatir. Sebagian anggota klub astronom
-    amatir di negara maju bahkan bergiat dengan intensif sehingga menghasilkan prestasi
-    yang setara dengan astronom profesional.\r\n\r\nObyek wisata pendukung\r\nSuatu
-    destinasi astrowisata akan lebih diminati wisatawan apabila disana atau di dekatnya
-    ada obyek-obyek wisata lain, sehingga wisatawan bisa menikmati berbagai obyek
-    dan atraksi wisata dalam satu kali perjalanan. Di pulau Sabu ada berbagai obyek
-    yang menarik, sebagai contoh, bukit warna-warni Kelabba Madja (gambar 3). Keindahannya
-    telah cukup terkenal dan foto-fotonya sudah banyak beredar di internet. Bukit
-    dengan lapisan-lapiran tanah berbeda warna seperti itu termasuk langka di dunia.
-    Menurut cerita penduduk setempat, pada zaman kejayaan Majapahit di Jawa, mahapatih
-    Gajah Mada pernah singgah di pulau Sabu, antara lain ke Kelabba Madja. Pada tahun
-    2021, Kabupaten Sabu Raijua meraih juara 3 situs sejarah terbaik dalam Anugerah
-    Pesona Indonesia (API) karena adanya peninggalan Majapahit disana.\r\n\r\nContoh
-    lain adalah Goa Mabala, sebuah rongga bawah tanah, dengan suatu celah diatasnya
-    sehingga pada siang hari sebagian dari gua mendapat penerangan alami yang indah
-    (gambar 4). Masih ada bagian-bagian gua Mabala yang lebih dalam dan gelap. Bagian
-    yang gelap itu bila ditata dengan pencahayaan warna-warni yang indah akan menjadi
-    menarik untuk dikunjungi, untuk itu perlu dilakukan survei dan penelitian lebih
-    lanjut. Dengan kekhasan geologi tersebut pulau Sabu memiliki potensi besar untuk
-    menjadi sebuah geopark di masa depan seperti pulau Belitung.\r\n\r\nPantai-pantai
-    yang indah juga banyak terdapat di pulau Sabu. Pantai Menanga (gambar 5) misalnya
-    memiliki hamparan pasir yang luas yang dapat menampung banyak wisatawan untuk
-    berenang dan berjemur. Di pantai Rae Mea dan pantai Bali, saat laut surut, orang
-    dapat berjalan di antara lamun, jauh ke tengah laut dengan ketinggian air hanya
-    sebetis hingga sepinggang. Pantai Langa\u2019ae, pasirnya putih, lembut dan nyaman
-    untuk wisatawan berjemur dan bermain. Disini juga wisatawan dapat menikmati keindahan
-    matahari terbenam (gambar 6). Masih banyak pantai-pantai lain yang jika ditata
-    juga dapat menarik bagi wisatawan.\r\n\r\nSelain wisata alam, pulau Sabu juga
-    memiliki potensi wisata budaya. Di desa adat Namata misalnya, wisatawan dapat
-    merasakan suasana desa adat yang berhiaskan batu-batu bulat berukuran besar yang
-    konon diangkat dari dasar laut dengan kekuatan gaib. Disana juga wisatawan bisa
-    menyaksikan, mempelajari adat istiadat orang Sabu zaman dahulu hingga sekarang.
-    Wisatawan juga dapat melihat-lihat mencoba dan membeli pakaian tradisional dari
-    tenunan khas Sabu (gambar 7), menikmati suasana rumah adat Sabu dan lain-lain.
-    Pada tahun 2021 Namata juga pernah meraih penghargaan API (Anugerah Pesona Indonesia),
-    sebagai juara pertama kampung adat  terpopuler. Di berbagai desa yang lain, pada
-    tanggal-tanggal tertentu ada upacara adat, kegiatan doa bersama, festival, tari-tarian
-    dan kegiatan budaya lain. \r\n\r\nJika pulau Sabu memiliki banyak potensi kepariwisataan,
-    mengapa sedikit sekali wisatawan yang datang dan waktu tinggalnya pun pendek
-    dibanding kawasan wisata lain di Indonesia?\r\nHal ini terutama disebabkan karena
-    lokasinya yang terpencil, sarana transportasi yang masih kurang dan infrastruktur
-    yang masih belum memadai untuk wisata masal. Lapangan terbang masih terlalu kecil,
-    dengan landasan pacu berupa tanah keras belum diaspal, sehingga hanya bisa didarati
-    oleh pesawat kecil. Hotel-hotel berbintang belum ada, hanya ada penginapan milik
-    penduduk, sekelas hotel melati di pulau Jawa. Oleh karena itu jika sarana dan
-    prasarana transportasi, akomodasi dan infrastruktur ditingkatkan, dibarengi dengan
-    pemasaran yang bagus, dipastikan arus wisatawan akan meningkat pesat.\r\n\r\nGerhana
-    Matahari 20 April 2023\r\nSalah satu peristiwa besar astronomi dalam waktu dekat
-    yang dapat diamati dari pulau Sabu akan terjadi pada tanggal 20 April 2023, yaitu
-    gerhana Matahari Total. Gerhana Matahari adalah peristiwa tertutupnya Matahari
-    oleh Bulan. Gerhana Matahari Total selalu menarik perhatian wisatawan khusus
-    penggemar peristiwa langit dari seluruh dunia, sehingga dapat menjadi kesempatan
-    untuk menarik wisatawan untuk datang. Totalitas gerhana ini akan melalui ujung
-    Barat Australia, Timor Leste bagian Timur, daerah leher burung Papua, pulau Biak
-    dan beberapa pulau kecil di Maluku (lihat gambar 1). Gerhana sebagiannya dapat
-    diamati dari seluruh Indonesia kecuali pulau Sumatera bagian Utara. Di Sabu,
-    proses gerhana akan dimulai pada pukul 10.33 WITA, mencapai puncaknya pada pukul
-    12.06 dan berakhir pukul 13.41.\r\n\r\nProbabilitas keberhasilan pengamatan gerhana
-    Matahari Total di pulau Biak dan Papua diperkirakan tidak cukup tinggi. Hal ini
-    disebabkan iklim yang kurang mendukung. Tutupan awan dan curah hujan yang biasanya
-    cukup tinggi pada bulan April disana sehingga diprediksi 16% kemungkinan cerah,
-    dengan 62% kemungkinan hujan, menurut weatherspark.com. Di pulau Sabu, harapan
-    untuk bisa menyaksikan gerhana cukup tinggi karena secara rata-rata tutupan awan
-    (35% kemungkinan cerah) dan curah hujan yang rendah (18% kemungkinan hujan).
-    \r\n\r\nDi pulau Sabu Gerhana Matahari memang tidak sampai total, melainkan maksimum
-    93% dari totalitas, artinya pada saat puncak gerhana, 93% permukaan Matahari
-    akan tertutup Bulan, namun tetap cukup menarik. Masyarakat bisa menyaksikan proses
-    tertutupnya Matahari oleh bulan sampai maksimum 93%. Langit akan terasa semakin
-    meremang sejak dimulainya gerhana hingga dekat ke puncak gerhana, lalu perlahan
-    menjadi benderang kembali. Temperatur udara pun akan terasa semakin sejuk seiring
-    dengan memuncaknya proses gerhana.\r\n\r\nPelatihan Calon Pemandu Astrowisata\r\nUntuk
-    mengamati gerhana Matahari dengan aman, diperlukan pengetahuan dan ketrampilan
-    tertentu yang cukup sederhana, sebab cara pengamatan yang salah bisa berbahaya
-    untuk mata. Oleh karena itu pada tanggal 10-11 Juni 2022 yang lalu dilaksanakan
-    pelatihan untuk calon pemandu astrowisata, dengan peserta guru dan siswa SMA/SMK,
-    guru SMP, pemandu wisata dan staf dinas pariwisata, berjumlah 66 orang. Tujuan
-    dari pelatihan ini adalah memberikan pengetahuan dasar tentang gerhana Matahari,
-    cara mengamatinya, dan faktor-faktor yang mempengaruhi keberhasilan pengamatan.
-    Dengan demikian isi materi pelatihan adalah :\r\n1.\tDasar pengetahuan tentang
-    astrowisata\r\n2.\tDasar teori gerhana\r\n3.\tPengetahuan tentang teropong bintang\r\n4.\tPengetahuan
-    tentang cuaca dan iklim terutama di sekitar pulau Sabu\r\n5.\tPraktek bongkar
-    pasang teropong bintang\r\n6.\tPraktek pengamatan Matahari (gambar 8)\r\n7.\tPraktek
-    pengamatan bintang pada malam hari\r\n8.\tPraktek penggunaan jentera awan\r\n\r\nPelatihan
-    teori diberikan di dalam aula pemerintah kabupaten Sabu Raijua, sedangkan praktek
-    pengamatan matahari di halaman aula tersebut setelah materi teori gerhana diberikan.
-    Praktek pengamatan Matahari dilakukan dengan menggunakan teropong bintang yang
-    dipasangi filter matahari di ujung obyektifnya, dan juga menggunakan kacamata
-    Matahari. Kegiatan-kegiatan pelatihan astronomi ini dilakukan pada pelatihan
-    hari pertama. Karena jumlah teropong bintang dan filternya terbatas, peserta
-    harus bergantian melihat Matahari melalui teropong. Disediakan 50 kacamata matahari
-    untuk para peserta, sehingga para peserta dapat mengamati melalui kacamata Matahari
-    bersama-sama. Pengamatan bintang dilakukan pada malam hari, sehingga peserta
-    harus datang kembali ke halaman kantor pemkab pada malam hari, setelah siangnya
-    pelatihan teori.\r\n\r\nPada hari kedua dilakukan pelatihan tentang cuaca dan
-    iklim dengan praktek penggunaan alat jentera awan. Pengetahuan ini diberikan
-    karena pengamatan benda langit sangat dipengaruhi oleh kondisi cuaca. Pada saat
-    langit berawan merata atau hujan misalnya tidak dapat dilakukan pengamatan. Pada
-    saat angin kencang, misalnya, teropong dapat bergetar ditiup angin sehingga citra
-    bintang juga nampak bergerak-gerak. Pada saat malam hari dan kelembaban tinggi
-    misalnya, teropong dapat diselimuti embun sehingga mengaburkan citra bintang.\r\n\r\nPada
-    hari kedua juga dilakukan pelatihan intensif bongkar pasang teropong untuk beberapa
-    peserta pelatihan terpilih saja, karena jumlah alat yang terbatas. Diharapkan
-    ketrampilan bongkar pasang teropong bintang ini nantinya dapat ditularkan kepada
-    peserta lain setelah para pelatih kembali ke Bandung.\r\n\r\nDisadari bahwa waktu
-    dua hari pelatihan terlalu singkat untuk memberikan pengetahuan dan ketrampilan,
-    maka pelatihan akan dilanjutkan secara daring seminggu sekali pada bulan Agustus
-    hingga Oktober. Dengan demikian diharapkan para peserta pelatihan kelak dapat
-    ikut memandu masyarakat dan wisatawan dalam mengamati gerhana Matahari 20 Maret
-    2023 dengan aman dan nyaman.\r\n\r\nPenutup\r\nDari pemaparan diatas, dapat disimpulkan
-    besarnya potensi Sabu untuk kegiatan Astrowisata di masa depan. Akan tetapi pengembangan
-    astrowisata ini tidak dapat berdiri sendiri, perlu disertai dengan pengembangan
-    sarana dan prasarana transportasi, infrastruktur dan pengembangan obyek wisata
-    lain, seperti wisata geologi, wisata pantai, wisata budaya dan lain-lain. Oleh
-    karena itu diperlukan kerjasama antara pemerintah pusat, pemerintah kabupaten
-    Sabu Raijua dan perguruan tinggi untuk mengembangkan kepariwisataan pulau Sabu.\r\n"
+  m_text: "Gerhana Matahari\n\nGerhana Matahari adalah fenomena ketika Bulan melintas
+    di antara Matahari dan Bumi, sehingga cahaya Matahari terhalang sebagian atau
+    sepenuhnya. Peristiwa ini hanya terjadi pada fase bulan baru (new moon).\n\n\n\n\n\n\n\n\n\n\nJenis-Jenis
+    Gerhana Matahari\n1. Gerhana Matahari Total: Bulan menutupi piringan Matahari
+    secara sempurna. Langit akan menjadi gelap gulita sesaat seperti senja, dan korona
+    (atmosfer luar Matahari) akan terlihat jelas di pinggirannya.  \n2. Gerhana Matahari
+    Cincin: Terjadi ketika posisi Bulan berada di titik terjauh dari Bumi (apogee),
+    sehingga ukurannya terlihat lebih kecil dan tidak mampu menutupi Matahari sepenuhnya.
+    Hasilnya, muncul lingkaran cahaya terang yang menyerupai cincin api (ring of
+    fire).  \n3. Gerhana Matahari Sebagian: Matahari hanya tertutup sebagian oleh
+    piringan Bulan, menciptakan bentuk seperti sabit raksasa di langit.\n\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1104,8 +974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000024796, y: -61.93622}
-  m_SizeDelta: {x: 959.4062, y: 1704.2257}
+  m_AnchoredPosition: {x: 0.0013313, y: -102.72}
+  m_SizeDelta: {x: 848.4067, y: 1622.6083}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1095544021
 MonoBehaviour:
@@ -1194,12 +1064,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.6
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1260,7 +1130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1320445046}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 049c226ee1268aa499af8c2971b8b599, type: 3}
+  m_Script: {fileID: 11500000, guid: 119d0ba06f0558c49ade3946d0fdc894, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1345046036
@@ -1454,8 +1324,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0013428, y: -61.927}
-  m_SizeDelta: {x: 959.4, y: 1704.2}
+  m_AnchoredPosition: {x: 0.00050735, y: -102.72}
+  m_SizeDelta: {x: 848.41, y: 1622.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1699148536
 MonoBehaviour:
@@ -1553,6 +1423,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 130456771}
   - {fileID: 889258395}
   m_Father: {fileID: 713552144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1597,7 +1468,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -342.62, y: 875.4824}
+  m_AnchoredPosition: {x: -287.12, y: 838}
   m_SizeDelta: {x: 274.1613, y: 80.9648}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2037864508
@@ -1645,8 +1516,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1320445051}
-        m_TargetAssemblyTypeName: Artikel1cs, Assembly-CSharp
-        m_MethodName: Backbutton
+        m_TargetAssemblyTypeName: Artikel3, Assembly-CSharp
+        m_MethodName: Back
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
